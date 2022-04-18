@@ -2,9 +2,34 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="pfom-maven-lib" />
+      <option name="name" value="pfom-maven-lib" />
+      <option name="url" value="https://nexus-ci.corp.dev.vtb/repository/pfomb-maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://central" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-cd" />
+      <option name="name" value="nexus-cd" />
+      <option name="url" value="https://nexus-cd.region.vtb.ru/repository/erpv-maven-test" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pfomb-maven" />
+      <option name="name" value="Nexus repo pfomb" />
+      <option name="url" value="https://nexus-ci.corp.dev.vtb/repository/pfom-maven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://nexus-ci.corp.dev.vtb/repository/erpv-maven" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -12,9 +37,19 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="pim-maven" />
+      <option name="name" value="pim-maven" />
+      <option name="url" value="https://nexus-ci.corp.dev.vtb/repository/pim-maven/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="pim-maven-snapshot" />
+      <option name="name" value="pim-maven-snapshot" />
+      <option name="url" value="https://nexus-ci.corp.dev.vtb/repository/pim-maven-snapshot/" />
     </remote-repository>
   </component>
 </project>
