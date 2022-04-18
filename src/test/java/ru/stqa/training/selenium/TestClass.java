@@ -22,10 +22,10 @@ public class TestClass extends TestBase {
         appearence.click();
         WebElement logotype = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//span[contains (text(), 'Logotype')]"));
         logotype.click();
-        WebElement сatalog = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//span[contains (text(), 'Catalog')]"));
-        сatalog.click();
-        WebElement сatalogIn = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//ul//span[contains (text(), 'Catalog')]"));
-        сatalogIn.click();
+        WebElement catalog = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//span[contains (text(), 'Catalog')]"));
+        catalog.click();
+        WebElement catalogIn = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//ul//span[contains (text(), 'Catalog')]"));
+        catalogIn.click();
         WebElement productGroups = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//span[contains (text(), 'Product Groups')]"));
         productGroups.click();
         WebElement optionGroups = driver.findElement(By.xpath("//ul[@id='box-apps-menu']//span[contains (text(), 'Option Groups')]"));
