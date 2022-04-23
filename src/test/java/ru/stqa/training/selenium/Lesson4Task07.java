@@ -24,12 +24,12 @@ public class Lesson4Task07  extends TestBase {
 
         for (String box : boxType) {
             System.out.println("*** " + box + " ***");
-            locator = "//div[@class='middle']//div[@id='" + box + "']//li[@class]";
+            locator = "//div[@id='" + box + "']";
             itemsCount = driver.findElements(By.xpath(locator)).size();
             if (itemsCount > 0) {
                 for (int i = 1; i <= itemsCount; i++) {
                     item = driver.findElement(By.xpath(locator + "[" + i + "]"));
-                    stickerCount = item.findElements(By.xpath(".//div[@class='image-wrapper']/div[@title]")).size();
+                    stickerCount = item.findElements(By.xpath("//div[contains(@class,'sticker')]")).size();
                     itemName = item.findElement(By.xpath(".//div[@class='name']")).getText();
                     if (stickerCount == 1) {
                         stickerName = item.findElement(By.xpath(".//div[@title]")).getText();
