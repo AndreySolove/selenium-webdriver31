@@ -24,13 +24,14 @@ public class Lesson4Task07  extends TestBase {
 
         for (String box : boxType) {
             System.out.println("*** " + box + " ***");
-            locator = "//div[@id='" + box + "']";
+            locator = ".//div[@id='" + box + "']//li[@class='product column shadow hover-light']";
             itemsCount = driver.findElements(By.xpath(locator)).size();
             if (itemsCount > 0) {
                 for (int i = 1; i <= itemsCount; i++) {
                     item = driver.findElement(By.xpath(locator + "[" + i + "]"));
-                    stickerCount = item.findElements(By.xpath("//div[contains(@class,'sticker')]")).size();
+                    stickerCount = item.findElements(By.xpath(".//div[@class='image-wrapper']//div[contains(@class,'sticker')]")).size();
                     itemName = item.findElement(By.xpath(".//div[@class='name']")).getText();
+                    System.out.println(stickerCount);
                     if (stickerCount == 1) {
                         stickerName = item.findElement(By.xpath(".//div[@title]")).getText();
                         System.out.println("ALL RIGHT! The item " + itemName + " has sticker " + stickerName.toUpperCase());
@@ -43,5 +44,4 @@ public class Lesson4Task07  extends TestBase {
             }
         }
     }
-
 }
