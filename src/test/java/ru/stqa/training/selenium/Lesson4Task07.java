@@ -6,8 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Lesson4Task07  extends TestBase {
@@ -17,31 +19,15 @@ public class Lesson4Task07  extends TestBase {
 
         driver.get("http://localhost/litecart/en/");
 
-        String[] boxType = {"box-most-popular", "box-campaigns", "box-latest-products"};
-        String locator, itemName, stickerName;
-        int itemsCount, stickerCount;
-        WebElement item;
-
-        for (String box : boxType) {
-            System.out.println("*** " + box + " ***");
-            locator = ".//div[@id='" + box + "']//li[@class='product column shadow hover-light']";
-            itemsCount = driver.findElements(By.xpath(locator)).size();
-            if (itemsCount > 0) {
-                for (int i = 1; i <= itemsCount; i++) {
-                    item = driver.findElement(By.xpath(locator + "[" + i + "]"));
-                    stickerCount = item.findElements(By.xpath(".//div[@class='image-wrapper']//div[contains(@class,'sticker')]")).size();
-                    itemName = item.findElement(By.xpath(".//div[@class='name']")).getText();
-                    System.out.println(stickerCount);
-                    if (stickerCount == 1) {
-                        stickerName = item.findElement(By.xpath(".//div[@title]")).getText();
-                        System.out.println("ALL RIGHT! The item " + itemName + " has sticker " + stickerName.toUpperCase());
-                    }
-                    else if (stickerCount > 1)
-                        System.out.println("ERROR! The item " + itemName + " has MORE than one sticker");
-                    else
-                        System.out.println("ERROR! The item " + itemName + " WITHOUT sticker");
+        String locator = "li.product";
+            List<WebElement> items = driver.findElements(By.xpath(locator));
+            if (items.size() > 0) {
+                for (WebElement item : items) {
+                    int stickerCount = item.findElements(By.cssSelector("div.sticker")).size();
+                    Assert.assertEquals(stickerCount, 1, "The number of stickers is not equal to one");
                 }
             }
         }
     }
-}
+
+
